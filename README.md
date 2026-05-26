@@ -1,6 +1,6 @@
 # Flask CI/CD Pipeline — Application Flask avec déploiement automatisé
 
-Application web développée avec Flask intégrant une pipeline CI/CD complète avec Docker, GitHub Actions et déploiement automatique sur VPS via SSH.
+Application web développée avec Flask intégrant une pipeline CI/CD complète avec Docker, GitHub Actions et déploiement automatique sur Render via Deploy Hook
 
 ---
 
