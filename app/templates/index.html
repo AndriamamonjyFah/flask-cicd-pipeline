@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="grid-lines"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="badge">v{{ version }} — live</div>
+    <h1 class="hero-title">
+      <span class="line">Deploy</span>
+      <span class="line accent" id="typed-text"></span>
+      <span class="line">automatically.</span>
+    </h1>
+    <p class="hero-sub">
+      Flask · Docker · GitHub Actions · VPS<br>
+      Push. Test. Build. Ship.
+    </p>
+    <div class="hero-actions">
+      <a href="/about" class="btn btn-primary">View details</a>
+      <a href="/health" target="_blank" class="btn btn-ghost">
+        <span class="dot"></span> Health check
+      </a>
+    </div>
+  </div>
+
+  <div class="terminal">
+    <div class="terminal-header">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="terminal-title">github actions</span>
+    </div>
+    <div class="terminal-body" id="terminal-lines"></div>
+  </div>
+</section>
+
+{% endblock %}

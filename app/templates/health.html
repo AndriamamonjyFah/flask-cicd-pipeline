@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="about-section">
+  <div class="about-header">
+    <p class="about-label">System status</p>
+    <h1 class="about-title">Health check</h1>
+  </div>
+
+  <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 3.5rem;">
+    <div class="card" data-delay="0">
+      <span class="card-icon">🟢</span>
+      <p class="card-label">Status</p>
+      <p class="card-value" style="color: var(--accent);">Healthy</p>
+    </div>
+    <div class="card" data-delay="1">
+      <span class="card-icon">🕐</span>
+      <p class="card-label">Checked at</p>
+      <p class="card-value" style="font-size:0.82rem;">{{ checked_at }}</p>
+    </div>
+    <div class="card" data-delay="2">
+      <span class="card-icon">⚙</span>
+      <p class="card-label">Version</p>
+      <p class="card-value">{{ version }}</p>
+    </div>
+  </div>
+
+  <div class="pipeline-row">
+    <p class="about-label" style="margin-bottom: 1.5rem;">Services</p>
+    <div class="health-services">
+      <div class="service-row" data-delay="0">
+        <div class="service-left">
+          <span class="service-dot"></span>
+          <span class="service-name">Flask app</span>
+        </div>
+        <span class="service-badge ok">operational</span>
+      </div>
+      <div class="service-row" data-delay="1">
+        <div class="service-left">
+          <span class="service-dot"></span>
+          <span class="service-name">Gunicorn server</span>
+        </div>
+        <span class="service-badge ok">operational</span>
+      </div>
+      <div class="service-row" data-delay="2">
+        <div class="service-left">
+          <span class="service-dot"></span>
+          <span class="service-name">Docker container</span>
+        </div>
+        <span class="service-badge ok">operational</span>
+      </div>
+      <div class="service-row" data-delay="3">
+        <div class="service-left">
+          <span class="service-dot"></span>
+          <span class="service-name">CI/CD pipeline</span>
+        </div>
+        <span class="service-badge ok">operational</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.health-services {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.service-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.service-row.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.service-row:hover {
+  border-color: rgba(0,229,160,0.2);
+}
+.service-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.service-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(0,229,160,0.6);
+  animation: pulse 2s infinite;
+}
+.service-name {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text);
+}
+.service-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.service-badge.ok {
+  background: rgba(0,229,160,0.08);
+  color: var(--accent);
+  border: 1px solid rgba(0,229,160,0.2);
+}
+</style>
+
+{% endblock %}

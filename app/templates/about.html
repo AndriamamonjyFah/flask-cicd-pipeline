@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="about-section">
+  <div class="about-header">
+    <p class="about-label">Project info</p>
+    <h1 class="about-title">{{ app_name }}</h1>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card" data-delay="0">
+      <span class="card-icon">⚙</span>
+      <p class="card-label">Version</p>
+      <p class="card-value">{{ version }}</p>
+    </div>
+    <div class="card" data-delay="1">
+      <span class="card-icon">📅</span>
+      <p class="card-label">Build date</p>
+      <p class="card-value">{{ build_date }}</p>
+    </div>
+    <div class="card" data-delay="2">
+      <span class="card-icon">🐍</span>
+      <p class="card-label">Runtime</p>
+      <p class="card-value">Python Flask</p>
+    </div>
+    <div class="card" data-delay="3">
+      <span class="card-icon">🐳</span>
+      <p class="card-label">Container</p>
+      <p class="card-value">Docker</p>
+    </div>
+    <div class="card" data-delay="4">
+      <span class="card-icon">⚡</span>
+      <p class="card-label">CI/CD</p>
+      <p class="card-value">GitHub Actions</p>
+    </div>
+    <div class="card" data-delay="5">
+      <span class="card-icon">🌍</span>
+      <p class="card-label">Deploy</p>
+      <p class="card-value">VPS via SSH</p>
+    </div>
+  </div>
+
+  <div class="pipeline-row">
+    <p class="about-label" style="margin-bottom:1.5rem">Pipeline flow</p>
+    <div class="pipeline">
+      <div class="pipe-step">git push</div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step">pytest</div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step">docker build</div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step">docker push</div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step highlight">deploy 🚀</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
