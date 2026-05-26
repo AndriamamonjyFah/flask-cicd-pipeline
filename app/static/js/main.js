@@ -28,7 +28,7 @@ const lines = [
   { text: '→ Building Docker image...', cls: 'info' },
   { text: '✓ docker build -t flask-app .', cls: 'success' },
   { text: '✓ docker push fahrendren/flask-app:latest', cls: 'success' },
-  { text: '→ Deploying to VPS via SSH...', cls: 'info' },
+  { text: '→ Deploying to Render...', cls: 'info' },
   { text: '✓ Container restarted 🚀', cls: 'success' },
 ];
 
